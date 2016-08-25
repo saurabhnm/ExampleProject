@@ -45,6 +45,10 @@ So we require these minimum skills:
 
 --Be able to write a basic function that uses jQuery
 
+--Be able to follow instructions and look at code and create something similar
+
+--Be able to write code that reads like English
+
 If you think you have this abilities, please go to the test page for your instructions.
 
 
