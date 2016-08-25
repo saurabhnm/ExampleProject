@@ -1,0 +1,21 @@
+If you don't have the following install them on your system.
+
+Visual Studio 2015 
+MS SQL Server (Any version)
+Git and a GIT Client
+
+Instructions:
+1. Clone the code on your local system. You will be required to upload the project after you have changes that are listed below.
+2.Create a database on your local server called ExamplesDB
+3. In the database/Tables folder are table definitions, run these queries to create the 2 tables
+4.Run the InsertPersons.sql file to insert records into the persons table
+5.Run the InsertPersonalRecords.sql to insert the records into the personal records table
+6.Run the views and stored procedures for this database
+
+Question:
+Run the procedure GetPersonsByYear with the parameter of 2015.
+How many records are returned?
+
+Write out your answer here:
+
+Commit your code after writing down your answer with the commit name "First Answer"
