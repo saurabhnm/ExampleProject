@@ -23,6 +23,7 @@
         </span>
         <span class="col-lg-10">
             <asp:TextBox runat="server" id="txtState"></asp:TextBox>
+           
 </span>
         <div class="row">
         <span class="col-lg-2">
