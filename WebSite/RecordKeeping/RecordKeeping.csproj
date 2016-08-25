@@ -53,6 +53,8 @@
     <Reference Include="System.Data" />
     <Reference Include="System.Core" />
     <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
     <Reference Include="System.Web.Extensions" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Drawing" />
@@ -83,6 +85,7 @@
     <Reference Include="System.Web.Optimization, Version=1.1.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35">
       <HintPath>..\packages\Microsoft.AspNet.Web.Optimization.1.1.3\lib\net40\System.Web.Optimization.dll</HintPath>
     </Reference>
+    <Reference Include="Telerik.Web.UI, Version=2016.2.607.45, Culture=neutral, PublicKeyToken=121fae78165ba3d4, processorArchitecture=MSIL" />
     <Reference Include="WebGrease">
       <Private>True</Private>
       <HintPath>..\packages\WebGrease.1.5.2\lib\WebGrease.dll</HintPath>
@@ -179,7 +182,25 @@
     <Content Include="fonts\glyphicons-halflings-regular.ttf" />
     <Content Include="fonts\glyphicons-halflings-regular.eot" />
     <Content Include="Account\Web.config" />
+    <EntityDeploy Include="RecordKeepingData.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>RecordKeepingData.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <Content Include="RecordKeepingData.edmx.diagram">
+      <DependentUpon>RecordKeepingData.edmx</DependentUpon>
+    </Content>
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
+    <Content Include="Person.aspx" />
+    <Content Include="RecordKeepingData.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>RecordKeepingData.edmx</DependentUpon>
+      <LastGenOutput>RecordKeepingData.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="RecordKeepingData.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>RecordKeepingData.edmx</DependentUpon>
+      <LastGenOutput>RecordKeepingData.cs</LastGenOutput>
+    </Content>
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />
@@ -213,6 +234,12 @@
     <Content Include="favicon.ico" />
     <Content Include="Global.asax" />
     <Content Include="Site.Master" />
+    <Content Include="Telerik\Telerik.Web.Design.dll" />
+    <Content Include="Telerik\Telerik.Web.Device.Detection.dll" />
+    <Content Include="Telerik\Telerik.Web.Device.Detection.xml" />
+    <Content Include="Telerik\Telerik.Web.UI.dll" />
+    <Content Include="Telerik\Telerik.Web.UI.Skins.dll" />
+    <Content Include="Telerik\Telerik.Web.UI.XML" />
     <Content Include="ViewSwitcher.ascx" />
     <Content Include="Web.config" />
     <Content Include="Bundle.config" />
@@ -358,11 +385,49 @@
     <Compile Include="Default.aspx.designer.cs">
       <DependentUpon>Default.aspx</DependentUpon>
     </Compile>
+    <Compile Include="GetPersonalData.cs">
+      <DependentUpon>RecordKeepingData.tt</DependentUpon>
+    </Compile>
+    <Compile Include="GetPersonsByYear_Result.cs">
+      <DependentUpon>RecordKeepingData.tt</DependentUpon>
+    </Compile>
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="InsertPerson_Result.cs">
+      <DependentUpon>RecordKeepingData.tt</DependentUpon>
+    </Compile>
     <Compile Include="Models\IdentityModels.cs" />
+    <Compile Include="Person.aspx.cs">
+      <DependentUpon>Person.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Person.aspx.designer.cs">
+      <DependentUpon>Person.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Person.cs">
+      <DependentUpon>RecordKeepingData.tt</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="PersonalRecord.cs">
+      <DependentUpon>RecordKeepingData.tt</DependentUpon>
+    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="RecordKeepingData.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>RecordKeepingData.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="RecordKeepingData.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>RecordKeepingData.tt</DependentUpon>
+    </Compile>
+    <Compile Include="RecordKeepingData.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>RecordKeepingData.edmx</DependentUpon>
+    </Compile>
     <Compile Include="Site.Master.cs">
       <DependentUpon>Site.Master</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -388,6 +453,12 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Properties\licenses.licx" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

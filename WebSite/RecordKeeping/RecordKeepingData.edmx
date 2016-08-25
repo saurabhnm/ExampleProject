@@ -1,0 +1,290 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="ExamplesDBModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="PersonalRecords">
+          <Key>
+            <PropertyRef Name="PersonalRecords" />
+          </Key>
+          <Property Name="PersonalRecords" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="PersonalId" Type="int" Nullable="false" />
+          <Property Name="TimeOfContact" Type="datetime" Nullable="false" />
+          <Property Name="Notes" Type="varchar(max)" Nullable="false" />
+          <Property Name="TimeCompleted" Type="datetime" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Persons">
+          <Key>
+            <PropertyRef Name="PersonId" />
+          </Key>
+          <Property Name="PersonId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="FirstName" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="LastName" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="Address1" Type="varchar" MaxLength="200" />
+          <Property Name="Address2" Type="varchar" MaxLength="200" />
+          <Property Name="City" Type="varchar" MaxLength="50" />
+          <Property Name="StateCode" Type="char" MaxLength="2" Nullable="false" />
+          <Property Name="Zip" Type="varchar" MaxLength="12" />
+        </EntityType>
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'ExamplesDB.dbo.GetPersonalData' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="GetPersonalData">
+          <Key>
+            <PropertyRef Name="PersonId" />
+            <PropertyRef Name="FirstName" />
+            <PropertyRef Name="LastName" />
+            <PropertyRef Name="StateCode" />
+            <PropertyRef Name="PersonalRecords" />
+            <PropertyRef Name="TimeOfContact" />
+            <PropertyRef Name="Notes" />
+            <PropertyRef Name="TimeCompleted" />
+          </Key>
+          <Property Name="PersonId" Type="int" Nullable="false" />
+          <Property Name="FirstName" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="LastName" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="Address1" Type="varchar" MaxLength="200" />
+          <Property Name="Address2" Type="varchar" MaxLength="200" />
+          <Property Name="City" Type="varchar" MaxLength="50" />
+          <Property Name="StateCode" Type="char" MaxLength="2" Nullable="false" />
+          <Property Name="Zip" Type="varchar" MaxLength="12" />
+          <Property Name="PersonalRecords" Type="int" Nullable="false" />
+          <Property Name="TimeOfContact" Type="datetime" Nullable="false" />
+          <Property Name="Notes" Type="varchar(max)" Nullable="false" />
+          <Property Name="TimeCompleted" Type="datetime" Nullable="false" />
+        </EntityType>
+        <Association Name="FK_PersonalRecords_Persons">
+          <End Role="Persons" Type="Self.Persons" Multiplicity="1" />
+          <End Role="PersonalRecords" Type="Self.PersonalRecords" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Persons">
+              <PropertyRef Name="PersonId" />
+            </Principal>
+            <Dependent Role="PersonalRecords">
+              <PropertyRef Name="PersonalId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Function Name="GetPersonsByYear" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="YearToCheck" Type="int" Mode="In" />
+        </Function>
+        <Function Name="InsertPerson" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="firstname" Type="varchar" Mode="In" />
+          <Parameter Name="lastname" Type="varchar" Mode="In" />
+          <Parameter Name="Address1" Type="varchar" Mode="In" />
+          <Parameter Name="Address2" Type="varchar" Mode="In" />
+          <Parameter Name="City" Type="varchar" Mode="In" />
+          <Parameter Name="StateCode" Type="char" Mode="In" />
+          <Parameter Name="Zip" Type="varchar" Mode="In" />
+        </Function>
+        <EntityContainer Name="ExamplesDBModelStoreContainer">
+          <EntitySet Name="PersonalRecords" EntityType="Self.PersonalRecords" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Persons" EntityType="Self.Persons" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="GetPersonalData" EntityType="Self.GetPersonalData" store:Type="Views" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [GetPersonalData].[PersonId] AS [PersonId], 
+    [GetPersonalData].[FirstName] AS [FirstName], 
+    [GetPersonalData].[LastName] AS [LastName], 
+    [GetPersonalData].[Address1] AS [Address1], 
+    [GetPersonalData].[Address2] AS [Address2], 
+    [GetPersonalData].[City] AS [City], 
+    [GetPersonalData].[StateCode] AS [StateCode], 
+    [GetPersonalData].[Zip] AS [Zip], 
+    [GetPersonalData].[PersonalRecords] AS [PersonalRecords], 
+    [GetPersonalData].[TimeOfContact] AS [TimeOfContact], 
+    [GetPersonalData].[Notes] AS [Notes], 
+    [GetPersonalData].[TimeCompleted] AS [TimeCompleted]
+    FROM [dbo].[GetPersonalData] AS [GetPersonalData]</DefiningQuery>
+          </EntitySet>
+          <AssociationSet Name="FK_PersonalRecords_Persons" Association="Self.FK_PersonalRecords_Persons">
+            <End Role="Persons" EntitySet="Persons" />
+            <End Role="PersonalRecords" EntitySet="PersonalRecords" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="ExamplesDBModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="PersonalRecord">
+          <Key>
+            <PropertyRef Name="PersonalRecords" />
+          </Key>
+          <Property Name="PersonalRecords" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="PersonalId" Type="Int32" Nullable="false" />
+          <Property Name="TimeOfContact" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="Notes" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="TimeCompleted" Type="DateTime" Nullable="false" Precision="3" />
+          <NavigationProperty Name="Person" Relationship="Self.FK_PersonalRecords_Persons" FromRole="PersonalRecords" ToRole="Persons" />
+        </EntityType>
+        <EntityType Name="Person">
+          <Key>
+            <PropertyRef Name="PersonId" />
+          </Key>
+          <Property Name="PersonId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="FirstName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="LastName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Address1" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+          <Property Name="Address2" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+          <Property Name="City" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="StateCode" Type="String" MaxLength="2" FixedLength="true" Unicode="false" Nullable="false" />
+          <Property Name="Zip" Type="String" MaxLength="12" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="PersonalRecords" Relationship="Self.FK_PersonalRecords_Persons" FromRole="Persons" ToRole="PersonalRecords" />
+        </EntityType>
+        <EntityType Name="GetPersonalData">
+          <Key>
+            <PropertyRef Name="PersonId" />
+            <PropertyRef Name="FirstName" />
+            <PropertyRef Name="LastName" />
+            <PropertyRef Name="StateCode" />
+            <PropertyRef Name="PersonalRecords" />
+            <PropertyRef Name="TimeOfContact" />
+            <PropertyRef Name="Notes" />
+            <PropertyRef Name="TimeCompleted" />
+          </Key>
+          <Property Name="PersonId" Type="Int32" Nullable="false" />
+          <Property Name="FirstName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="LastName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Address1" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+          <Property Name="Address2" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+          <Property Name="City" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="StateCode" Type="String" MaxLength="2" FixedLength="true" Unicode="false" Nullable="false" />
+          <Property Name="Zip" Type="String" MaxLength="12" FixedLength="false" Unicode="false" />
+          <Property Name="PersonalRecords" Type="Int32" Nullable="false" />
+          <Property Name="TimeOfContact" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="Notes" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="TimeCompleted" Type="DateTime" Nullable="false" Precision="3" />
+        </EntityType>
+        <Association Name="FK_PersonalRecords_Persons">
+          <End Role="Persons" Type="Self.Person" Multiplicity="1" />
+          <End Role="PersonalRecords" Type="Self.PersonalRecord" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Persons">
+              <PropertyRef Name="PersonId" />
+            </Principal>
+            <Dependent Role="PersonalRecords">
+              <PropertyRef Name="PersonalId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="ExamplesDBEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="PersonalRecords" EntityType="Self.PersonalRecord" />
+          <EntitySet Name="Persons" EntityType="Self.Person" />
+          <EntitySet Name="GetPersonalDatas" EntityType="Self.GetPersonalData" />
+          <AssociationSet Name="FK_PersonalRecords_Persons" Association="Self.FK_PersonalRecords_Persons">
+            <End Role="Persons" EntitySet="Persons" />
+            <End Role="PersonalRecords" EntitySet="PersonalRecords" />
+          </AssociationSet>
+          <FunctionImport Name="GetPersonsByYear" ReturnType="Collection(ExamplesDBModel.GetPersonsByYear_Result)">
+            <Parameter Name="YearToCheck" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="InsertPerson" ReturnType="Collection(ExamplesDBModel.InsertPerson_Result)">
+            <Parameter Name="firstname" Mode="In" Type="String" />
+            <Parameter Name="lastname" Mode="In" Type="String" />
+            <Parameter Name="Address1" Mode="In" Type="String" />
+            <Parameter Name="Address2" Mode="In" Type="String" />
+            <Parameter Name="City" Mode="In" Type="String" />
+            <Parameter Name="StateCode" Mode="In" Type="String" />
+            <Parameter Name="Zip" Mode="In" Type="String" />
+          </FunctionImport>
+        </EntityContainer>
+        <ComplexType Name="GetPersonsByYear_Result">
+          <Property Type="Int32" Name="PersonId" Nullable="false" />
+          <Property Type="String" Name="FirstName" Nullable="false" MaxLength="50" />
+          <Property Type="String" Name="LastName" Nullable="false" MaxLength="50" />
+        </ComplexType>
+        <ComplexType Name="InsertPerson_Result">
+          <Property Type="Int32" Name="PersonId" Nullable="false" />
+          <Property Type="String" Name="FullName" Nullable="false" MaxLength="101" />
+        </ComplexType>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="ExamplesDBModelStoreContainer" CdmEntityContainer="ExamplesDBEntities">
+          <EntitySetMapping Name="PersonalRecords">
+            <EntityTypeMapping TypeName="ExamplesDBModel.PersonalRecord">
+              <MappingFragment StoreEntitySet="PersonalRecords">
+                <ScalarProperty Name="PersonalRecords" ColumnName="PersonalRecords" />
+                <ScalarProperty Name="PersonalId" ColumnName="PersonalId" />
+                <ScalarProperty Name="TimeOfContact" ColumnName="TimeOfContact" />
+                <ScalarProperty Name="Notes" ColumnName="Notes" />
+                <ScalarProperty Name="TimeCompleted" ColumnName="TimeCompleted" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Persons">
+            <EntityTypeMapping TypeName="ExamplesDBModel.Person">
+              <MappingFragment StoreEntitySet="Persons">
+                <ScalarProperty Name="PersonId" ColumnName="PersonId" />
+                <ScalarProperty Name="FirstName" ColumnName="FirstName" />
+                <ScalarProperty Name="LastName" ColumnName="LastName" />
+                <ScalarProperty Name="Address1" ColumnName="Address1" />
+                <ScalarProperty Name="Address2" ColumnName="Address2" />
+                <ScalarProperty Name="City" ColumnName="City" />
+                <ScalarProperty Name="StateCode" ColumnName="StateCode" />
+                <ScalarProperty Name="Zip" ColumnName="Zip" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="GetPersonalDatas">
+            <EntityTypeMapping TypeName="ExamplesDBModel.GetPersonalData">
+              <MappingFragment StoreEntitySet="GetPersonalData">
+                <ScalarProperty Name="PersonId" ColumnName="PersonId" />
+                <ScalarProperty Name="FirstName" ColumnName="FirstName" />
+                <ScalarProperty Name="LastName" ColumnName="LastName" />
+                <ScalarProperty Name="Address1" ColumnName="Address1" />
+                <ScalarProperty Name="Address2" ColumnName="Address2" />
+                <ScalarProperty Name="City" ColumnName="City" />
+                <ScalarProperty Name="StateCode" ColumnName="StateCode" />
+                <ScalarProperty Name="Zip" ColumnName="Zip" />
+                <ScalarProperty Name="PersonalRecords" ColumnName="PersonalRecords" />
+                <ScalarProperty Name="TimeOfContact" ColumnName="TimeOfContact" />
+                <ScalarProperty Name="Notes" ColumnName="Notes" />
+                <ScalarProperty Name="TimeCompleted" ColumnName="TimeCompleted" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <FunctionImportMapping FunctionImportName="GetPersonsByYear" FunctionName="ExamplesDBModel.Store.GetPersonsByYear">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="ExamplesDBModel.GetPersonsByYear_Result">
+                <ScalarProperty Name="PersonId" ColumnName="PersonId" />
+                <ScalarProperty Name="FirstName" ColumnName="FirstName" />
+                <ScalarProperty Name="LastName" ColumnName="LastName" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="InsertPerson" FunctionName="ExamplesDBModel.Store.InsertPerson">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="ExamplesDBModel.InsertPerson_Result">
+                <ScalarProperty Name="PersonId" ColumnName="PersonId" />
+                <ScalarProperty Name="FullName" ColumnName="FullName" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="true" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>
