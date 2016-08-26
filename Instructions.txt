@@ -5,6 +5,8 @@ MS SQL Server (Any version) or access to a SQL server (You can get a free accoun
 MS SQL Server Management Studio 
 Git and a GIT Client
 
+If you a student at the U of A, you will be able to get these from https://www.dreamspark.com/Student/Software-Catalog.aspx 
+
 Instructions:
 1. Clone the code on your local system. You will be required to upload the project after you have changes that are listed below.  Complete as much as you can, it may be that you might not be able to answer all the questions or make the code changes.
 2.Create a database on your local server called ExamplesDB
