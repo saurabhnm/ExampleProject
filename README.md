@@ -1,5 +1,5 @@
 # ExampleProject
-This is a starter project to verify an applicant has the skills for Scholarship Universe position.
+This is a starter project to verify an applicant has the skills for a Scholarship Universe developer position.
 
 As a student programmer for Scholarship Universe(SU), you will be asked to create items in various different technologies.
 Everyday you will use the following skills with type:
@@ -74,7 +74,7 @@ So we require these minimum skills:
 
 --Be able to write code that reads like English
 
-If you think you have this abilities, please go to the test page for your instructions.
+If you think you have these abilities, please go to the instructions.txt for your instructions.
 
 
 
