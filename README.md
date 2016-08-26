@@ -4,56 +4,39 @@ This is a starter project to verify an applicant has the skills for a Scholarshi
 As a student programmer for Scholarship Universe(SU), you will be asked to create items in various different technologies.
 Everyday you will use the following skills with type:
 
-Job Duties	Type
-
-SQL  	Language
-
-Visual Studio	Program
-
-C#	Language
-
-ASP.NET	API
-
-Entity Framework	Technology
-
-Sql Server Management Studio	Program
-
-Telerik RadGrid	Control
-
-Telerik -Other controls	Platform
-
-Red Gate SQL Prompt	Plug-in
-
-JavaScript	Language
-
-jQuery	API
-
-Outlook	Program
-
-Jira	Program
-
-Git	Technology
-
-BitBucket	Platform-Website
-
-SourceTree	Program
+|Job Duties	| Type |
+|--------|---------|
+|SQL  |	Language |
+|Visual Studio	|Program |
+|C# |	Language |
+|ASP.NET |	API |
+| Entity Framework |	Technology |
+|Sql Server Management Studio |	Program |
+|Telerik RadGrid |	Control |
+|Telerik -Other controls |	Platform |
+|Red Gate SQL Prompt |	Plug-in |
+|JavaScript	|Language |
+|jQuery	|API |
+|Outlook|	Program |
+|Jira	|Web Application|
+|Git |	Technology |
+|BitBucket	|Platform-Website |
+|SourceTree	|Program |
 
 
 Sometimes you would use the following but not every day
 
-Red Gate Data Compare	Program
 
-Red Gate SQL Compare	Program
-
-Excel/Word	Program
-
-ASP.NET MVC	Platform
-
-Kendo	Technology
-
-Python	Language
-
-Selenium	Platform
+|Job Duties	| Type |
+|--------|---------|
+|Red Gate Data Compare	|Program |
+|Red Gate SQL Compare	|Program |
+|Excel/Word	|Program |
+|ASP.NET MVC	|Platform |
+|Kendo	|Technology |
+|Python	|Language |
+|Selenium|	Platform|
+|Pandas, NumPy,Sklearn | API|
 
 
 
