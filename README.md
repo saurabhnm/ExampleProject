@@ -5,31 +5,56 @@ As a student programmer for Scholarship Universe(SU), you will be asked to creat
 Everyday you will use the following skills with type:
 
 Job Duties	Type
+
 SQL  	Language
+
 Visual Studio	Program
+
 C#	Language
+
 ASP.NET	API
+
 Entity Framework	Technology
+
 Sql Server Management Studio	Program
+
 Telerik RadGrid	Control
+
 Telerik -Other controls	Platform
+
 Red Gate SQL Prompt	Plug-in
+
 JavaScript	Language
+
 jQuery	API
+
 Outlook	Program
+
 Jira	Program
+
 Git	Technology
+
 BitBucket	Platform-Website
+
 SourceTree	Program
 
+
 Sometimes you would use the following but not every day
+
 Red Gate Data Compare	Program
-Red Gate SQL Complare	Program
+
+Red Gate SQL Compare	Program
+
 Excel/Word	Program
+
 ASP.NET MVC	Platform
+
 Kendo	Technology
+
 Python	Language
+
 Selenium	Platform
+
 
 
 Our dream candiate would be able to do all of these. However, that is never the case that one person has all of these skills.
