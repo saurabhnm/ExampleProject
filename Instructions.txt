@@ -26,6 +26,10 @@ Create a stored procedure that takes a lastname parameter and returns all the pe
 Save this as a file in the stored procedures tab and commit this with the message "Last name sp",
 
 Open the solution in the website folder.
+Make a change that will change the application name of every page to be your name.
+Commit this with the message "App name"
+
+
 Change the connection strings to point at your database. (Both of them)
 Use https://msdn.microsoft.com/en-us/library/bf7sd233(v=vs.85).aspx if you are not sure how to change these values.
 Run the website after you have changed the connection.
@@ -50,6 +54,11 @@ Commit this with the message "City created"
 Exercise: Use C# and EF to update a page
 On the page CreatPerson.aspx.cs page update the function to save the city to the database.
 Commit this with message "Changed EF update"
+
+Exercise: Make it pretty
+Make CreatePerson.aspx look better.
+This is all your opinion. Your only restraint is that you have to use classes that are not this page but in a css file.
+Commit this with the message "I feel pretty."
 
 Exercise: Show understanding of object oriented principles.
 On the page People.cs in the classes folder
