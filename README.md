@@ -42,22 +42,19 @@ Sometimes you would use the following but not every day
 
 Our dream candiate would be able to do all of these. However, that is never the case that one person has all of these skills.
 So we require these minimum skills:
+* Be able to use Visual Studio
+* ⋅Be able to do pretty much anything in SQL (we use tables, ad-hoc queries, views, functions, stored procs, sql jobs, Common Table Expression, string manipulation, etc. every day.
+* Understand How to use a object oriented language
 
-⋅Be able to use Visual Studio
+* Understand basic HTML and CSS enough to be able to create a style or use an existing framework like Bootstrap
 
-⋅Be able to do pretty much anything in SQL (we use tables, ad-hoc queries, views, functions, stored procs, sql jobs, Common Table Expression, string manipulation, etc. every day.
+* Be able to write a basic function that uses jQuery
 
--Understand How to use a object oriented language
+* Be able to follow instructions 
 
---Understand basic HTML and CSS enough to be able to create a style or use an existing framework like Bootstrap
+* Be able to look at code and create something similar
 
---Be able to write a basic function that uses jQuery
-
---Be able to follow instructions 
-
---Be able to look at code and create something similar
-
---Be able to write code that reads like English
+* Be able to write code that reads like English
 
 If you think you have these abilities, please go to the instructions.txt for your instructions.
 
