@@ -9,13 +9,19 @@ If you a student at the U of A, you will be able to get these from https://www.d
 
 Instructions:
 1. Clone the code on your local system. You will be required to upload the project after you have changes that are listed below.  Complete as much as you can, it may be that you might not be able to answer all the questions or make the code changes.
+You will be asked to check your code after you complete tasks. If you cannot complete the task, check in your changes with required message but preface it "Could not complete"
+Create a new .txt called started.txt
+Commit this new file with the message of "I am starting."
+
 2.Create a database on your local server called ExamplesDB
 3. In the database/Tables folder are table definitions, run these queries to create the 2 tables
 4.Run the InsertPersons.sql file to insert records into the persons table
 5.Run the InsertPersonalRecords.sql to insert the records into the personal records table
 6.Run the views and stored procedures for this database
 
-Question 1:
+
+
+Question:
 Run the procedure GetPersonsByYear with the parameter of 2015.
 How many records are returned?
 
