@@ -56,7 +56,7 @@ So we require these minimum skills:
 
 * Be able to write code that reads like English
 
-If you think you have these abilities, please go to the instructions.txt for your instructions.
+If you think you have these abilities, please go to the instructions.md for your instructions.
 
 
 
