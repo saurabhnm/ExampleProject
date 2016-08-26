@@ -50,3 +50,19 @@ Commit this with the message "City created"
 Exercise: Use C# and EF to update a page
 On the page CreatPerson.aspx.cs page update the function to save the city to the database.
 Commit this with message "Changed EF update"
+
+Exercise: Show understanding of object oriented principles.
+On the page People.cs in the classes folder
+Create either an override (or optional parameter) for the constructor so that when a list is not passed in it creates a new list.
+Create a field for the following items with the proper value: IsValid, Name, AverageAge,NumberOfPeople
+Commit this with the message "I am down with OOP, yea you know me."
+
+Exercise: Create a page and do some HTML and JavaScript.
+Create a new page called "JavaScript.aspx"
+Create a input box called "txtExample"
+Create a button called "btnMyButton"
+Create a javascript function, using jQuery, that adds 1 to the txtExample every time you click it.
+Make sure it can be blank (and thus treated as 0).
+Commit this with the message "JavaScript is my friend."
+
+Email back the person who sent you the email for this page that you have completed the quiz and include your GITHUB url where you have these results.
