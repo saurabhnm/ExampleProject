@@ -76,10 +76,10 @@ Exercise: Show understanding of object oriented principles.
 
 Exercise: Create a page and do some HTML and JavaScript.
 * Create a new page called "JavaScript.aspx"
-* Create a input box called "txtExample"
+* Create a input box called "txtExample" and not allow the user to enter a number in the textbox.
 * Create a button called "btnMyButton"
-* Create a javascript function, using jQuery, that adds 1 to the txtExample every time you click it.
-* Make sure it can be blank (and thus treated as 0).
+* Create a javascript function, using jQuery, that adds 1 to the txtExample every time you click it. The end result of this exercise is that the person can just click the button and the textbox will keep adding new numbers. A person should never have to type in the textbox.
+* Make sure it can be blank (and thus treated as 0). 
 * Commit this with the message "JavaScript is my friend."
 
 Email back the person who sent you the email for this page that you have completed the quiz and include your GITHUB url where you have these results.
