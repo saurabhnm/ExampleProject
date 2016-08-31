@@ -60,11 +60,11 @@ Exercise : Change an insert page with ASP components
 * Commit this with the message "City created"
 
 Exercise: Use C# and EF to update a page
-* On the page CreatPerson.aspx.cs page update the function to save the city to the database.
+* On the page AddPerson.aspx.cs page update the function to save the city to the database.
 * Commit this with message "Changed EF update"
 
 Exercise: Make it pretty
-* Make CreatePerson.aspx look better.
+* Make AddPerson.aspx look better.
 * This is all your opinion. Your only restraint is that you have to use classes that are not this page but in a css file.
 * Commit this with the message "I feel pretty."
 
