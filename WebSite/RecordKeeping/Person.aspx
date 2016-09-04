@@ -6,7 +6,7 @@
         </GroupingSettings>
         <MasterTableView AutoGenerateColumns="False" DataKeyNames="PersonId" DataSourceID="PersonDS">
             <Columns>
-                <telerik:GridBoundColumn DataField="PersonId" DataType="System.Int32" FilterControlAltText="Filter PersonId column" HeaderText="PersonId" ReadOnly="True" SortExpression="PersonId" UniqueName="PersonId">
+                <telerik:GridBoundColumn DataField="PersonId" DataType="System.Int32" FilterControlAltText="Filter PersonId column" HeaderText="PersonId" Display="False" SortExpression="PersonId" UniqueName="PersonId">
                 </telerik:GridBoundColumn>
                 <telerik:GridBoundColumn DataField="FirstName" FilterControlAltText="Filter FirstName column" HeaderText="FirstName" SortExpression="FirstName" UniqueName="FirstName">
                 </telerik:GridBoundColumn>
