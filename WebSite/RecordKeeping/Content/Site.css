@@ -43,3 +43,19 @@ input[type="select"] {
     margin-top: 50px;
 
 }
+
+#addPersonForm {
+
+    margin-top: 50px;
+    background-color: #D9EDF7;
+    border-radius:15px;
+    padding: 35px 5px 35px 90px;
+    width: 40%;
+}
+
+.custom_alert {
+
+    color: #563D7C;
+    font-size:15px;
+    font-weight:bold;
+}

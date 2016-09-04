@@ -192,7 +192,7 @@
       <Generator>EntityModelCodeGenerator</Generator>
       <LastGenOutput>RecordKeepingData.Designer.cs</LastGenOutput>
     </EntityDeploy>
-    <Content Include="JavaScript.aspx" />
+    <Content Include="Javascript.aspx" />
     <Content Include="RecordKeepingData.edmx.diagram">
       <DependentUpon>RecordKeepingData.edmx</DependentUpon>
     </Content>
@@ -408,6 +408,13 @@
     <Compile Include="InsertPerson_Result.cs">
       <DependentUpon>RecordKeepingData.tt</DependentUpon>
     </Compile>
+    <Compile Include="Javascript.aspx.cs">
+      <DependentUpon>Javascript.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Javascript.aspx.designer.cs">
+      <DependentUpon>Javascript.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Person.aspx.cs">
       <DependentUpon>Person.aspx</DependentUpon>
@@ -471,9 +478,6 @@
   <ItemGroup>
     <Service Include="{4A0DDDB5-7A95-4FBF-97CC-616D07737A77}" />
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
-  </ItemGroup>
-  <ItemGroup>
-    <TypeScriptCompile Include="Javascript.ts" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

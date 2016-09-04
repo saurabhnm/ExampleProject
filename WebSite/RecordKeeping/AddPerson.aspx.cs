@@ -29,7 +29,7 @@ namespace RecordKeeping
                     }
                     else
                     {
-                        this.lblPerson.Text = $"Your Is is {result.PersonId }";
+                        this.lblPerson.Text = $"Details saved with Id - {result.PersonId }";
                        
                     }
                 
