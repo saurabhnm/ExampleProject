@@ -1,1 +1,3 @@
-﻿
+﻿Question: Run the procedure GetPersonsByYear with the parameter of 2015. How many records are returned?
+
+Write out your answer here: 197 rows
