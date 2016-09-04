@@ -8,7 +8,7 @@
         <span class="col-lg-10">
             <asp:TextBox runat="server" id="txtFirstName"></asp:TextBox>
             <asp:RequiredFieldValidator runat="server" id="reqFirstName" controltovalidate="txtFirstName" errormessage="Please enter your first name!" />
-</span>
+        </span>
     </div>
     <div class="row">
         <span class="col-lg-2">
@@ -17,7 +17,16 @@
         <span class="col-lg-10">
             <asp:TextBox runat="server" id="txtLastName"></asp:TextBox>
             <asp:RequiredFieldValidator runat="server" id="reqLastName" controltovalidate="txtLastName" errormessage="Please enter your last name!" />
-</span>
+        </span>
+    </div>
+    <div class="row">
+        <span class="col-lg-2">
+            City
+        </span>
+        <span class="col-lg-10">
+            <asp:TextBox runat="server" id="txtCity"></asp:TextBox>
+            <asp:RequiredFieldValidator runat="server" id="reqCity" controltovalidate="txtCity" errormessage="Please enter your City of Residence!" />
+        </span>
     </div>
     <div class="row">
         <span class="col-lg-2">
@@ -27,14 +36,14 @@
             <asp:TextBox runat="server" id="txtState" MaxLength="2"></asp:TextBox>
             <asp:RequiredFieldValidator runat="server" id="reqState" controltovalidate="txtState" errormessage="Please enter your State of Residence!" />
            
-</span>
+        </span>
         <div class="row">
         <span class="col-lg-2">
            
         </span>
         <span class="col-lg-10">
             <asp:Button runat="server" id="btnSave" text="Quick Save" OnClick="btnSave_Click"/>
-</span>
+        </span>
     </div>
         <asp:Label runat="server" id="lblPerson"></asp:Label>
     </div>
