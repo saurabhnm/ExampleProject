@@ -1,6 +1,6 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="AddPerson.aspx.cs" Inherits="RecordKeeping.AddPerson" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="server">
-    
+    <asp:ValidationSummary ID="AddPersonValidationSummary" runat="server" ShowMessageBox="true" ShowSummary="false" />
     <div class="row">
         <span class="col-lg-2">
             First Name
