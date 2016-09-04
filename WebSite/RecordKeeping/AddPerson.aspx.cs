@@ -21,7 +21,7 @@ namespace RecordKeeping
                 using (var db = new ExamplesDBEntities())
                 {
                     var result =
-                        db.InsertPerson(this.txtFirstName.Text, this.txtLastName.Text, null, null, null,
+                        db.InsertPerson(this.txtFirstName.Text, this.txtLastName.Text, null, null, this.txtCity.Text,
                             this.txtState.Text, null).FirstOrDefault();
                     if (result == null)
                     {
