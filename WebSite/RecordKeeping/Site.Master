@@ -55,6 +55,7 @@
                         <li><a runat="server" href="~/Person">Persons</a></li>
                         <li><a runat="server" href="~/AddPerson">Add Person</a></li>
                         <li><a runat="server" href="~/Contact">Contact</a></li>
+                        <li><a runat="server" href="~/JavaScript">My Javascript Page</a></li>
                     </ul>
                     <asp:LoginView runat="server" ViewStateMode="Disabled">
                         <AnonymousTemplate>
